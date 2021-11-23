@@ -1,17 +1,17 @@
-def main():
+
+def demo_dictionary():
     studenten = {"Beau": [19, "HAVO"],
                  "Rosalie": [19, "HAVO"],
                  "Laura": [22, "HBO"],
-                 "Zaki": {"Leeftijd":18, "Vooropleiding": "HAVO"},
-                 "Pepijn": {"Leeftijd":17, "Vooropleiding":"HAVO"}}
+                 "Zaki": {"Leeftijd": 18, "Vooropleiding": "HAVO"},
+                 "Pepijn": {"Leeftijd": 17, "Vooropleiding": "HAVO"}}
     print(studenten)
-
 
     studenten_leeftijd = {19: ["Beau", "Rosalie"],
                           22: "Laura",
                           18: "Zaki",
                           17: "Pepijn"}
-    #print(studenten_leeftijd[18])
+    # print(studenten_leeftijd[18])
 
     # print(studenten["Laura"][0])
     print(studenten["Pepijn"]["Vooropleiding"])
@@ -25,6 +25,31 @@ def main():
     #
     # print(studenten.keys())
     # print(studenten.values())
+
+
+def demo_sets():
+
+    lievelingseten = set(["pasta", "sushi", "broccoli", "pizza", "tiramisu"])
+    gezondeten = set(["broccoli", "wortel", "soep", "appel", "sla"])
+
+    print(lievelingseten)
+    print(gezondeten)
+
+    # Union
+    # print(lievelingseten.union(gezondeten))
+
+    # Intersection
+    # print(gezondeten.intersection(lievelingseten))
+
+    # Difference
+    # print(lievelingseten.difference(gezondeten))
+    # print(gezondeten.difference(lievelingseten))
+
+
+
+def main():
+    demo_sets()
+
 
 
 main()
