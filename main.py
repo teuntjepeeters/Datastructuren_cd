@@ -1,3 +1,5 @@
+import pickle
+
 
 def demo_dictionary():
     studenten = {"Beau": [19, "HAVO"],
@@ -29,11 +31,14 @@ def demo_dictionary():
 
 def demo_sets():
 
-    lievelingseten = set(["pasta", "sushi", "broccoli", "pizza", "tiramisu"])
+    lievelingseten = set(["pasta", "pasta", "sushi", "broccoli", "pizza", "tiramisu"])
     gezondeten = set(["broccoli", "wortel", "soep", "appel", "sla"])
 
-    print(lievelingseten)
-    print(gezondeten)
+    lievelingseten.add("kapsalon")
+
+    #print(lievelingseten)
+
+    #print(gezondeten)
 
     # Union
     # print(lievelingseten.union(gezondeten))
@@ -45,10 +50,37 @@ def demo_sets():
     # print(lievelingseten.difference(gezondeten))
     # print(gezondeten.difference(lievelingseten))
 
+    # Symmetric difference
+    #print(lievelingseten.symmetric_difference(gezondeten))
+
+    set1 = set([1, 2, 3, 4])
+    set2 = set([4, 1])
+    print(set2)
+    print(set2.issubset(set1))
+    print(set2.issuperset(set1))
+    print(set1.issuperset(set2))
+
+
+def demo_pickling():
+    studenten = {"Beau": [19, "HAVO"],
+                 "Rosalie": [19, "HAVO"],
+                 "Laura": [22, "HBO"],
+                 "Zaki": {"Leeftijd": 18, "Vooropleiding": "HAVO"},
+                 "Pepijn": {"Leeftijd": 17, "Vooropleiding": "HAVO"}}
+    
+    inFile = open("demo_pickle", "wb")
+    pickle.dump(studenten, inFile)
+    inFile.close()
+
+    inFile = open("demo_pickle", "rb")
+    stud = pickle.load(inFile)
+    print(stud)
+    inFile.close()
+
 
 
 def main():
-    demo_sets()
+    demo_pickling()
 
 
 
